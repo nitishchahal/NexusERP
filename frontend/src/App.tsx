@@ -1,25 +1,21 @@
-import { useState } from 'react'
+import AppRouter from "./app/AppRouter";
 
+const App = () => {
+  return <AppRouter />;
+};
 
+export default App;
 
+// function App() {
+//   return (
+//     <div className="h-screen w-screen bg-red-500 flex items-center justify-center">
+//       <div className="bg-white p-10 rounded-2xl shadow-2xl">
+//         <h1 className="text-5xl font-bold text-red-500">
+//           Tailwind is Working 🚀
+//         </h1>
+//       </div>
+//     </div>
+//   );
+// }
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-     <section>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h1>Hello World</h1>
-          </div>
-        </div>
-      </div>
-     </section>
-      
-    </>
-  )
-}
-
-export default App
+// export default App;
