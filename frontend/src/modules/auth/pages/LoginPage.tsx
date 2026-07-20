@@ -1,7 +1,9 @@
 import { ShieldCheck, Users, BarChart3 } from "lucide-react";
 
+import NexusLogo from "../../../assets/nexus-logo.svg"; // adjust path to match where you place it
 import { Card, CardContent } from "../../../components";
 import { LoginForm } from "../components";
+import  AuthHeader  from "../../../../src/layouts/AuthLayout/AuthHeader"
 
 const features = [
   {
@@ -35,20 +37,11 @@ const LoginPage = () => {
       <div className="relative z-10 grid h-full w-full grid-cols-1 lg:grid-cols-[1.15fr_1fr]">
         {/* Left — illustration + copy */}
         <div className="hidden flex-col justify-between overflow-hidden p-10 lg:flex xl:p-14">
-          {/* Brand */}
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-sm font-bold text-white backdrop-blur-xl">
-              N
-            </div>
-            <div>
-              <p className="text-sm font-semibold leading-tight text-white">
-                NexusERP
-              </p>
-              <p className="text-xs leading-tight text-indigo-200/50">
-                Enterprise Resource Planning
-              </p>
-            </div>
-          </div>
+        
+         {/* Brand */}
+<div className="flex items-center justify-center">
+  <img src={NexusLogo} alt="NexusERP" className="h-18 w-auto xl:h-18" />
+</div>
 
           {/* Abstract illustration */}
           <div className="relative -my-6 flex flex-1 items-center justify-center">
@@ -176,26 +169,21 @@ const LoginPage = () => {
           <Card className="w-full max-w-[380px] rounded-3xl border border-white/[0.08] bg-white/[0.05] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] backdrop-blur-2xl">
             <CardContent className="space-y-6 p-7 sm:p-8">
               {/* Mobile brand mark */}
-              <div className="flex items-center gap-2.5 lg:hidden">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/[0.06] text-sm font-bold text-white">
-                  N
-                </div>
-                <span className="text-base font-semibold text-white">
-                  NexusERP
-                </span>
-              </div>
+              {/* <div className="flex items-center justify-center lg:hidden">
+  <img src={NexusLogo} alt="NexusERP" className="h-18 w-auto" />
+</div> */}
 
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-xl font-bold text-white shadow-lg shadow-indigo-950/50">
-                  N
-                </div>
-                <h2 className="bg-gradient-to-r from-white to-indigo-200 bg-clip-text text-2xl font-bold tracking-tight text-transparent">
-                  Welcome back
-                </h2>
-                <p className="mt-1.5 text-sm text-indigo-200/50">
-                  Sign in to continue to your workspace
-                </p>
-              </div>
+<AuthHeader
+  icon={
+    <img
+      src={NexusLogo}
+      alt="NexusERP"
+      className="h-14 w-auto drop-shadow-[0_4px_24px_rgba(129,140,248,0.4)] sm:h-16"
+    />
+  }
+  title="Welcome back"
+  subtitle="Sign in to continue to your workspace"
+/>
 
               <LoginForm />
 
