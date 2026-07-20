@@ -16,9 +16,9 @@ const AuthHeader = ({ title, subtitle, icon }: AuthHeaderProps) => {
         </div>
       )}
 
-      {/* <h2 className="bg-gradient-to-r from-white via-indigo-100 to-indigo-300 bg-clip-text text-[1.75rem] font-bold tracking-tight text-transparent sm:text-3xl">
+      <h2 className="bg-gradient-to-r from-white via-indigo-100 to-indigo-300 bg-clip-text text-[1.75rem] font-bold tracking-tight text-transparent sm:text-3xl">
         {title}
-      </h2> */}
+      </h2>
 
       {subtitle && (
         <p className="mt-2 max-w-xs text-sm leading-relaxed text-indigo-200/45">
