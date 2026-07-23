@@ -9,12 +9,13 @@ import {
   ResetPasswordPage,
 } from "../modules/auth";
 
+
 import {DashboardPage} from "../modules/dashboard";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* Redirect */}
+      {/* Redirecttt */}
       <Route path="/" element={<Navigate to="/login" replace />} />
 
       {/* Authentication */}
