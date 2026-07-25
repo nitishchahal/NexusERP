@@ -58,27 +58,79 @@ const ResetPasswordForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-
+    <Form
+      onSubmit={handleSubmit(onSubmit)}
+      className="space-y-7"
+    >
       {/* Password */}
       <FormField>
-        <FormLabel required>New Password</FormLabel>
-
-        <div className="relative">
-          <Lock className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
-
+        <FormLabel
+          required
+          className="mb-2 text-sm font-semibold tracking-tight text-slate-900"
+        >
+          New Password
+        </FormLabel>
+  
+        <div className="group relative">
+          <Lock
+            className="
+            pointer-events-none
+            absolute
+            left-4
+            top-1/2
+            h-5
+            w-5
+            -translate-y-1/2
+            text-slate-400
+            transition-colors
+            duration-300
+            group-focus-within:text-slate-700
+          "
+          />
+  
           <Input
             type={showPassword ? "text" : "password"}
-            placeholder="Enter a strong password"
-            className="h-12 pl-11 pr-12"
+            placeholder="Create a secure password"
+            className="
+              h-14
+              rounded-2xl
+              border-slate-200
+              bg-white/80
+              pl-12
+              pr-12
+              text-[15px]
+              shadow-sm
+              backdrop-blur-sm
+              transition-all
+              duration-300
+              placeholder:text-slate-400
+              hover:border-slate-300
+              focus:border-black
+              focus:ring-4
+              focus:ring-black/5
+            "
             {...register("password")}
             error={errors.password?.message}
           />
-
+  
           <button
             type="button"
-            onClick={() => setShowPassword((prev) => !prev)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 transition hover:text-slate-700"
+            disabled={isLoading}
+            onClick={() => setShowPassword((v) => !v)}
+            className="
+              absolute
+              right-4
+              top-1/2
+              -translate-y-1/2
+              rounded-full
+              p-1
+              text-slate-400
+              transition-all
+              duration-200
+              hover:scale-110
+              hover:text-slate-700
+              active:scale-95
+            "
           >
             {showPassword ? (
               <EyeOff className="h-5 w-5" />
@@ -87,35 +139,85 @@ const ResetPasswordForm = () => {
             )}
           </button>
         </div>
-
-        <p className="mt-2 text-xs text-slate-500">
-          Use at least 8 characters with letters, numbers, and symbols.
+  
+        <p className="mt-3 text-sm leading-relaxed text-slate-500">
+          Minimum 8 characters including uppercase, number and symbol.
         </p>
-
+  
         <FormError message={errors.password?.message} />
       </FormField>
-
+  
       {/* Confirm Password */}
       <FormField>
-        <FormLabel required>Confirm Password</FormLabel>
-
-        <div className="relative">
-          <Lock className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
-
+        <FormLabel
+          required
+          className="mb-2 text-sm font-semibold tracking-tight text-slate-900"
+        >
+          Confirm Password
+        </FormLabel>
+  
+        <div className="group relative">
+          <Lock
+            className="
+              pointer-events-none
+              absolute
+              left-4
+              top-1/2
+              h-5
+              w-5
+              -translate-y-1/2
+              text-slate-400
+              transition-colors
+              duration-300
+              group-focus-within:text-slate-700
+            "
+          />
+  
           <Input
             type={showConfirmPassword ? "text" : "password"}
             placeholder="Re-enter your password"
-            className="h-12 pl-11 pr-12"
+            className="
+              h-14
+              rounded-2xl
+              border-slate-200
+              bg-white/80
+              pl-12
+              pr-12
+              text-[15px]
+              shadow-sm
+              backdrop-blur-sm
+              transition-all
+              duration-300
+              placeholder:text-slate-400
+              hover:border-slate-300
+              focus:border-black
+              focus:ring-4
+              focus:ring-black/5
+            "
             {...register("confirmPassword")}
             error={errors.confirmPassword?.message}
           />
-
+  
           <button
             type="button"
+            disabled={isLoading}
             onClick={() =>
-              setShowConfirmPassword((prev) => !prev)
+              setShowConfirmPassword((v) => !v)
             }
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 transition hover:text-slate-700"
+            className="
+              absolute
+              right-4
+              top-1/2
+              -translate-y-1/2
+              rounded-full
+              p-1
+              text-slate-400
+              transition-all
+              duration-200
+              hover:scale-110
+              hover:text-slate-700
+              active:scale-95
+            "
           >
             {showConfirmPassword ? (
               <EyeOff className="h-5 w-5" />
@@ -124,16 +226,32 @@ const ResetPasswordForm = () => {
             )}
           </button>
         </div>
-
+  
         <FormError message={errors.confirmPassword?.message} />
       </FormField>
-
-      {/* Submit */}
+  
       <Button
         type="submit"
         fullWidth
         disabled={isLoading}
-        className="h-12 rounded-xl font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+        className="
+          h-14
+          rounded-2xl
+          bg-black
+          text-[15px]
+          font-semibold
+          tracking-tight
+          text-white
+          shadow-lg
+          shadow-black/10
+          transition-all
+          duration-300
+          hover:-translate-y-0.5
+          hover:shadow-xl
+          active:scale-[0.98]
+          disabled:cursor-not-allowed
+          disabled:opacity-70
+        "
       >
         {isLoading ? (
           <>
