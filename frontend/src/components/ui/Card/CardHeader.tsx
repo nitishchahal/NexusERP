@@ -6,14 +6,15 @@ const CardHeader = ({
   className = "",
 }: CardSectionProps) => {
   return (
-    <div
+    <header
       className={`
         ${cardHeaderStyles}
+        relative flex flex-col items-center text-center
         ${className}
       `}
     >
       {children}
-    </div>
+    </header>
   );
 };
 
