@@ -10,23 +10,29 @@ const AuthHeader = ({ title, subtitle, icon }: AuthHeaderProps) => {
   return (
     <header className="flex flex-col items-center text-center">
       {icon && (
-        <div className="relative flex items-center justify-center">
-          <div className="absolute h-20 w-20 rounded-full bg-indigo-500/20 blur-2xl" />
-          <div className="relative">{icon}</div>
+        <div className="relative mb-7">
+          {/* Soft ambient glow */}
+          <div className="absolute inset-0 scale-150 rounded-full bg-slate-300/20 blur-3xl" />
+
+          {/* Glass circle */}
+          <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl border border-white/60 bg-white/70 shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-2xl">
+            {icon}
+          </div>
         </div>
       )}
 
-      {/* <h2 className="bg-gradient-to-r from-white via-indigo-100 to-indigo-300 bg-clip-text text-[1.75rem] font-bold tracking-tight text-transparent sm:text-3xl">
+      <h1 className="text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-[2rem]">
         {title}
-      </h2> */}
+      </h1>
 
       {subtitle && (
-        <p className="mt-2 max-w-xs text-sm leading-relaxed text-indigo-200/45">
+        <p className="mt-3 max-w-sm text-[15px] leading-7 text-slate-500">
           {subtitle}
         </p>
       )}
 
-      <div className="mt-5 h-px w-12 bg-gradient-to-r from-transparent via-indigo-400/40 to-transparent" />
+      {/* Elegant divider */}
+      <div className="mt-8 h-px w-20 bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
     </header>
   );
 };
