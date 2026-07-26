@@ -10,10 +10,11 @@ hover:shadow-md
 `;
 
 export const cardHeaderStyles = `
-border-b
-border-slate-200
-px-6
-py-4
+  flex
+  flex-col
+  items-center
+  gap-2
+  pb-6
 `;
 
 export const cardContentStyles = `
