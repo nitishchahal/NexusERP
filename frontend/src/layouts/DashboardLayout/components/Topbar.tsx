@@ -46,7 +46,7 @@ const Topbar = () => {
 
           <Sparkles size={16} />
 
-          AI
+          AII
 
         </button>
 
