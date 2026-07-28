@@ -44,7 +44,7 @@ const Breadcrumb = () => {
           className="flex items-center gap-2 rounded-lg px-2 py-1 text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
         >
           <Home size={16} />
-          <span>Home</span>
+          <span>Homee</span>
         </Link>
 
         {breadcrumbs.map((item) => (
