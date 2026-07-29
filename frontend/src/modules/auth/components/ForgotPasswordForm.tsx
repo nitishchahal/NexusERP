@@ -87,7 +87,7 @@ const ForgotPasswordForm = () => {
           className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-indigo-600"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Login
+          Back to the Login
         </Link>
       </div>
     </Form>
