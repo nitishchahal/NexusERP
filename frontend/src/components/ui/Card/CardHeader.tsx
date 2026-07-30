@@ -3,15 +3,17 @@ import { cardHeaderStyles } from "./card.styles";
 
 const CardHeader = ({
   children,
-  className = "",
+  className,
 }: CardSectionProps) => {
   return (
     <header
-      className={`
-        ${cardHeaderStyles}
-        relative flex flex-col items-center text-center
-        ${className}
-      `}
+      className={[
+        cardHeaderStyles,
+        "relative flex flex-col items-center text-center",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       {children}
     </header>
