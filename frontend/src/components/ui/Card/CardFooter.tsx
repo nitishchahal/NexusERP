@@ -3,12 +3,17 @@ import { cardFooterStyles } from "./card.styles";
 
 const CardFooter = ({
   children,
-  className,
+  className = "",
 }: CardSectionProps) => {
   return (
-    <div className={[cardFooterStyles, className].filter(Boolean).join(" ")}>
+    <footer
+      className={`
+        ${cardFooterStyles}
+        ${className}
+      `}
+    >
       {children}
-    </div>
+    </footer>
   );
 };
 
