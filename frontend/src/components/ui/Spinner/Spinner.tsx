@@ -5,7 +5,7 @@ import type { SpinnerProps } from "./spinner.types";
 
 const Spinner = ({
   size = "md",
-  className,
+  className,neww wknbefb
 }: SpinnerProps) => {
   return (
     <Loader2
