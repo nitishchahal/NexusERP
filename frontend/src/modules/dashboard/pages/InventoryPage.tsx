@@ -7,7 +7,7 @@ const InventoryPage = () => {
       </div>
 
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <p className="text-slate-600">This is the inventory page placeholder. Add inventory dashboards and management panels here.</p>
+        <p className="text-slate-600">This iss the inventory page placeholder. Add inventory dashboards and management panels here.</p>
       </div>
     </div>
   );
