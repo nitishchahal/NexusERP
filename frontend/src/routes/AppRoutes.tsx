@@ -9,8 +9,14 @@ import {
   ResetPasswordPage,
 } from "../modules/auth";
 
-
-import {DashboardPage} from "../modules/dashboard";
+import {
+  DashboardPage,
+  InventoryPage,
+  SalesPage,
+  HRMSPage,
+  CRMPage,
+  SettingsPage,
+} from "../modules/dashboard";
 
 const AppRoutes = () => {
   return (
@@ -33,10 +39,12 @@ const AppRoutes = () => {
 
       {/* Dashboard */}
       <Route element={<DashboardLayout />}>
-        <Route
-          path="/dashboard"
-          element={<DashboardPage />}
-        />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/inventory" element={<InventoryPage />} />
+        <Route path="/sales" element={<SalesPage />} />
+        <Route path="/hrms" element={<HRMSPage />} />
+        <Route path="/crm" element={<CRMPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
       </Route>
 
       {/* 404 */}
