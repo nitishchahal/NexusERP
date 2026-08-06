@@ -36,7 +36,7 @@ const ResetPasswordPage = () => {
           {/* Footer */}
           <div className="border-t border-slate-200 pt-5 text-center">
             <p className="text-xs leading-5 text-slate-400">
-              Your new password will be encrypted and securely stored.
+              Your neww password will be encrypted and securely stored.
             </p>
           </div>
 
