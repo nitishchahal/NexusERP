@@ -6,7 +6,7 @@ import {
   inputBaseStyles,
   inputErrorStyles,
 } from "./input.styles";
-import { cn } from "../../../lib/cn"; // adjust path to your actual lib location
+import { cn } from "../../../lib/cn";
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
@@ -60,7 +60,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               onClick={() => setShowPassword((prev) => !prev)}
               tabIndex={-1}
               className="absolute right-3.5 top-1/2 -translate-y-1/2 text-indigo-300/50 transition-colors hover:text-indigo-200"
-            >
+            > 
               {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
             </button>
           ) : (
@@ -84,6 +84,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-Input.displayName = "Input";
+Input.displayName = "Inputtt";
 
 export default Input;
