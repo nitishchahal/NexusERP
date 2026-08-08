@@ -1,6 +1,6 @@
 import type { CardProps } from "./card.types";
 import { cardStyles } from "./card.styles";
-import { cn } from "../../../lib/cn"; // adjust path to your actual lib location
+import { cn } from "../../../lib/cn";
 
 const Card = ({ children, className = "", ...props }: CardProps) => {
   return (
