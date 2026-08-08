@@ -6,12 +6,7 @@ const CardFooter = ({
   className = "",
 }: CardSectionProps) => {
   return (
-    <footer
-      className={`
-        ${cardFooterStyles}
-        ${className}
-      `}
-    >
+    <footer className={`${cardFooterStyles} ${className}`}>
       {children}
     </footer>
   );
