@@ -7,16 +7,29 @@ interface TableHeaderProps<TData> {
 
 function TableHeader<TData>({ table }: TableHeaderProps<TData>) {
   return (
-    <thead>
+    <thead className="bg-slate-50/80">
       {table.getHeaderGroups().map((headerGroup) => (
         <tr
           key={headerGroup.id}
-          className="border-b border-slate-200 bg-slate-50"
+          className="border-b border-slate-200"
         >
           {headerGroup.headers.map((header) => (
             <th
               key={header.id}
-              className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-600"
+              className={`
+                whitespace-nowrap
+                px-6 py-4
+                text-left
+                text-xs
+                font-semibold
+                uppercase
+                tracking-wider
+                text-slate-500
+                transition-colors
+                duration-200
+                first:rounded-tl-xl
+                last:rounded-tr-xl
+              `}
             >
               {header.isPlaceholder
                 ? null
