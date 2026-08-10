@@ -27,28 +27,56 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const isPassword = type === "password";
 
     return (
-      <div className="w-full space-y-1.5">
+      <div className="w-full space-y-2">
         {label && (
-          <label className="text-xs font-medium text-indigo-800/70">
+          <label className="block text-sm font-medium tracking-tight text-slate-700">
             {label}
           </label>
         )}
 
-        <div className="relative">
+        <div className="group relative">
           {leftIcon && (
-            <div className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-indigo-300/50 transition-colors peer-focus:text-indigo-300">
+            <div
+              className={cn(
+                "pointer-events-none absolute left-3.5 top-1/2 z-10",
+                "-translate-y-1/2 text-slate-400",
+                "transition-colors duration-200",
+                "group-focus-within:text-indigo-500",
+                error && "text-rose-400"
+              )}
+            >
               {leftIcon}
             </div>
           )}
 
           <input
             ref={ref}
-            type={isPassword ? (showPassword ? "text" : "password") : type}
+            type={
+              isPassword
+                ? showPassword
+                  ? "text"
+                  : "password"
+                : type
+            }
             className={cn(
               inputBaseStyles,
-              error && inputErrorStyles,
+              "w-full rounded-xl border bg-white",
+              "px-4 py-3 text-sm text-slate-800",
+              "placeholder:text-slate-400",
+              "shadow-sm",
+              "outline-none",
+              "transition-all duration-200",
+              "border-slate-200",
+              "hover:border-slate-300",
+              "focus:border-indigo-500",
+              "focus:ring-4 focus:ring-indigo-500/10",
+              "disabled:cursor-not-allowed",
+              "disabled:bg-slate-50",
+              "disabled:text-slate-400",
               leftIcon && "pl-10",
-              (rightIcon || isPassword) && "pr-10",
+              (rightIcon || isPassword) && "pr-11",
+              error && inputErrorStyles,
+              error && "border-rose-400 focus:border-rose-500 focus:ring-rose-500/10",
               className
             )}
             {...props}
@@ -58,14 +86,35 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             <button
               type="button"
               onClick={() => setShowPassword((prev) => !prev)}
+              aria-label={showPassword ? "Hide password" : "Show password"}
               tabIndex={-1}
-              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-indigo-300/50 transition-colors hover:text-indigo-200"
-            > 
-              {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
+              className={cn(
+                "absolute right-3.5 top-1/2 z-10",
+                "-translate-y-1/2",
+                "rounded-md p-1",
+                "text-slate-400",
+                "transition-all duration-200",
+                "hover:bg-slate-100 hover:text-slate-600",
+                "focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+              )}
+            >
+              {showPassword ? (
+                <EyeOff size={17} strokeWidth={1.8} />
+              ) : (
+                <Eye size={17} strokeWidth={1.8} />
+              )}
             </button>
           ) : (
             rightIcon && (
-              <div className="absolute right-3.5 top-1/2 -translate-y-1/2 text-indigo-300/50">
+              <div
+                className={cn(
+                  "pointer-events-none absolute right-3.5 top-1/2",
+                  "-translate-y-1/2 text-slate-400",
+                  "transition-colors duration-200",
+                  "group-focus-within:text-indigo-500",
+                  error && "text-rose-400"
+                )}
+              >
                 {rightIcon}
               </div>
             )
@@ -73,10 +122,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         </div>
 
         {error ? (
-          <p className="text-xs text-rose-100">{error}</p>
+          <p className="text-xs font-medium text-rose-500">
+            {error}
+          </p>
         ) : (
           helperText && (
-            <p className="text-xs text-indigo-200/40">{helperText}</p>
+            <p className="text-xs text-slate-400">
+              {helperText}
+            </p>
           )
         )}
       </div>
