@@ -11,7 +11,7 @@ function TableHeader<TData>({ table }: TableHeaderProps<TData>) {
       {table.getHeaderGroups().map((headerGroup) => (
         <tr
           key={headerGroup.id}
-          className="border-b border-slate-300"
+          className="border-b border-slate-200"
         >
           {headerGroup.headers.map((header) => (
             <th
