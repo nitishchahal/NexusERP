@@ -18,7 +18,7 @@ function TableBody<TData>({
         rows.map((row) => (
           <tr
             key={row.id}
-            className="border-t border-slate-200 transition-colors hover:bg-slate-50"
+            className="border-t border-slate-300 transition-colors hover:bg-slate-50"
           >
             {row.getVisibleCells().map((cell) => (
               <td
