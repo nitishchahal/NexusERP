@@ -19,7 +19,7 @@ function TableHeader<TData>({ table }: TableHeaderProps<TData>) {
         <tr
           key={headerGroup.id}
           className="
-            border-b border-slate-200
+            border-b border-slate-500
             dark:border-slate-700
           "
         >
