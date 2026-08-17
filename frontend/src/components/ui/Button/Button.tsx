@@ -20,7 +20,7 @@ const Button = ({
         relative overflow-hidden group
         inline-flex items-center justify-center gap-2
         rounded-xl font-semibold
-        transition-all duration-300 ease-out
+        transition-all duration-400 ease-out
         disabled:cursor-not-allowed disabled:opacity-60
 
         before:absolute before:inset-0
