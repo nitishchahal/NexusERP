@@ -18,7 +18,7 @@ const Button = ({
       disabled={disabled || loading}
       className={`
         relative overflow-hidden group
-        inline-flex items-center justify-center gap-2
+        inline-flex items-center justify-center gap-3
         rounded-xl font-semibold
         transition-all duration-400 ease-out
         disabled:cursor-not-allowed disabled:opacity-60
