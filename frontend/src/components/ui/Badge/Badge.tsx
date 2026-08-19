@@ -16,7 +16,7 @@ const Badge = ({
         "transition-all duration-300 ease-out",
         "backdrop-blur-xl border",
         "before:absolute before:inset-0 before:opacity-0 before:transition-opacity before:duration-300",
-        "hover:before:opacity-100 hover:scale-105",
+        "hover:before:opacity-100 hover:scale-115",
         badgeVariants[variant],
         className,
       ]
