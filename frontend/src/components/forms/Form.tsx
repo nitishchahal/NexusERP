@@ -12,7 +12,7 @@ const Form = ({
 }: FormProps) => {
   return (
     <form
-      className={`space-y-6 ${className}`}
+      className={`space-y-5 ${className}`}
       {...props}
     >
       {children}
