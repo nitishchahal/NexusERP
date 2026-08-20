@@ -1,7 +1,7 @@
 export const cardStyles = `
 rounded-xl
 border
-border-slate-200
+border-slate-300
 bg-white
 shadow-sm
 transition-all
